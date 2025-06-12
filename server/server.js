@@ -11,11 +11,14 @@ const app = express();
 const port = process.env.PORT || 4000
 connectDB();
 
-const allowedOrigins = ['https://mern-auth-backend-pm7j.onrender.com', 'https://mern-auth-frontend-icvi.onrender.com']
+const allowedOrigins = ['https://mern-auth-frontend-icvi.onrender.com'];
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({origin: allowedOrigins, credentials: true}))
+app.use(cors({
+  origin: allowedOrigins[0],
+  credentials: true
+}));
 
 // API Endpoints
 app.get('/', (req, res) => res.send("API Working"));
