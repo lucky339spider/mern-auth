@@ -32,6 +32,8 @@ export const register = async (req, res)=>{
             maxAge: 7 * 24 * 60 * 60 * 1000
 
         });
+        console.log("Token sent:", token); // Add this
+return res.json({ success: true, token });
 
         // Sending welcome email
         const mailOptions = {
