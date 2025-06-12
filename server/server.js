@@ -9,6 +9,7 @@ import userRouter from "./routes/userRoutes.js";
 
 const app = express();
 const port = process.env.PORT || 4000
+const cors = require('cors');
 connectDB();
 
 const allowedOrigins = ['https://mern-auth-backend-pm7j.onrender.com']
