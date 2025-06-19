@@ -9,7 +9,6 @@ import userRouter from "./routes/userRoutes.js";
 
 const app = express();
 const port = process.env.PORT || 4000
-connectDB();
 
 const allowedOrigins = ['https://mern-auth-frontend-icvi.onrender.com'];
 
@@ -19,6 +18,8 @@ app.use(cors({
   origin: allowedOrigins[0],
   credentials: true
 }));
+
+connectDB();
 
 // API Endpoints
 app.get('/', (req, res) => res.send("API Working"));
